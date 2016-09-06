@@ -23,7 +23,7 @@ def do_mult(x, y):
     return total
 
 def matrix_multiply(x, y):
-    # Initialize array of proper size
+    # Initialize storage array of proper size, filled with zeroes
     arr = [[0 for columns in range(len(y[0]))] for rows in range(len(x))]
     for row in range(len(x)):
         for col in range(len(y[0])):
@@ -33,12 +33,15 @@ def matrix_multiply(x, y):
 ## Problem 2, 3
 
 class MyQueue:
+    arr = []
     def __init__(self):
-        pass
+        self
     def push(self, val):
-        pass
-    def pop(self):
-        pass
+        self.arr.append(val)
+    def pop(self): 
+        if len(self.arr) < 1:
+            return None
+        return self.arr[0]
     def __eq__(self, other):
         pass
     def __ne__(self, other):
