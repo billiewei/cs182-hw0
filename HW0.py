@@ -49,8 +49,15 @@ assert(s.pop() == 1)
 ret = util.add_position_iter([7, 5, 1, 4])
 assert(ret == [7, 6, 3, 7])
 
-# My own checks
+# My own check for map
 ret = util.add_position_map([7, 5, 1, 4])
+assert(ret == [7, 6, 3, 7])
+
+# # My own check for recursive
+# ret = util.add_position_recur([8])
+# assert(ret == [8])
+
+ret = util.add_position_recur([7, 5, 1, 4])
 assert(ret == [7, 6, 3, 7])
 
 # Remember that this function should not be destructive i.e.,

@@ -96,8 +96,8 @@ class MyStack:
                     return True
             return False
     def __str__(self):
-        print "PRINTING SELF!"
-        a = map(str, self.arr)    
+        a = map(str, self.arr) 
+        print "PRINTING SELF!"   
         print ', '.join(a)
         return ', '.join(a)
 
@@ -107,13 +107,15 @@ def add_position_iter(lst, number_from=0):
     arr = []
     for i in range(len(lst)):
         arr.append(lst[i]+i+number_from)
-    #print "This is my array:"
-    #print arr
     return arr
 
 def add_position_recur(lst, number_from=0):
-    arr = []
-    return arr
+    if len(lst) == 0:
+        return lst
+    elif len(lst) == 1:
+        return [lst[0]+number_from]
+    elif len(lst) > 1:
+        return [lst[0]+number_from] + add_position_recur(lst[1:],number_from+1)
 
 def add_position_map(lst, number_from=0):
     arr = list(map(lambda x: x+number_from+lst.index(x),lst))
