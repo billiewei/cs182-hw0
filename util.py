@@ -41,38 +41,83 @@ class MyQueue:
     def pop(self): 
         if len(self.arr) < 1:
             return None
-        return self.arr[0]
+        return_value = self.arr[0]
+        del self.arr[0]
+        return return_value
     def __eq__(self, other):
-        pass
+        if len(self.arr) != len(other):
+            return False
+        else:
+            for i in range(len(self.arr)):
+                if self.arr[i] != other[i]:
+                    return False
+            return True
     def __ne__(self, other):
-        pass
+        if len(self.arr) != len(other):
+            return True
+        else:
+            for i in range(len(self.arr)):
+                if self.arr[i] != other[i]:
+                    return True
+            return False
     def __str__(self):
-        pass
+       print "PRINTING SELF!"
+       a = map(str, self.arr)
+       print ', '.join(a)
+       return ', '.join(a)
 
 class MyStack:
+    arr = []
     def __init__(self):
-        pass
+        self
     def push(self, val):
-        pass
+        self.arr.append(val)
+        print self.arr
     def pop(self):
-        pass
+        if len(self.arr) < 1:
+            return None
+        return_value = self.arr[len(self.arr)-1]
+        del self.arr[len(self.arr)-1]
+        return return_value
     def __eq__(self, other):
-        pass
+        if len(self.arr) != len(other):
+            return False
+        else:
+            for i in range(len(self.arr)):
+                if self.arr[i] != other[i]:
+                    return False
+            return True
     def __ne__(self, other):
-        pass
+        if len(self.arr) != len(other):
+            return True
+        else:
+            for i in range(len(self.arr)):
+                if self.arr[i] != other[i]:
+                    return True
+            return False
     def __str__(self):
-        pass
+        print "PRINTING SELF!"
+        a = map(str, self.arr)    
+        print ', '.join(a)
+        return ', '.join(a)
 
 ## Problem 4
 
 def add_position_iter(lst, number_from=0):
-    pass
+    arr = []
+    for i in range(len(lst)):
+        arr.append(lst[i]+i+number_from)
+    #print "This is my array:"
+    #print arr
+    return arr
 
 def add_position_recur(lst, number_from=0):
-    pass
+    arr = []
+    return arr
 
 def add_position_map(lst, number_from=0):
-    pass
+    arr = list(map(lambda x: x+number_from+lst.index(x),lst))
+    return arr
 
 ## Problem 5
 

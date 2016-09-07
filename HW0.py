@@ -16,9 +16,17 @@ assert(mm == [[8, 5], [20, 13]])
 # Complete the definitions of the methods `init`, `push` and `pop` in the Python classes `MyQueue` and `MyStack`, using a deque data structure in Python. The operation pop should return, not print, the appropriate object in the structure. If empty, it should return None instead of throwing an error. On the other hand, operation push does not have to return anything. An example behavior is as follows:
 
 q = util.MyQueue()
-q.push(1); q.push(2); q.push(3)
+q.push(1); q.push(2);
 # should evaluate to
 assert(q.pop() == 1)
+assert(q.pop() == 2)
+
+s = util.MyStack()
+s.push(1); s.push(2); s.push(3)
+s.__str__()
+assert(s.pop() == 3)
+assert(s.pop() == 2)
+assert(s.pop() == 1)
 
 # ### Problem 3
 # For the two classes written in Problem 2, override __eq__, __ne__, and __str__ methods. You can read about these methods in detail here:
@@ -40,6 +48,11 @@ assert(q.pop() == 1)
 
 ret = util.add_position_iter([7, 5, 1, 4])
 assert(ret == [7, 6, 3, 7])
+
+# My own checks
+ret = util.add_position_map([7, 5, 1, 4])
+assert(ret == [7, 6, 3, 7])
+
 # Remember that this function should not be destructive i.e.,
 a = [7, 5, 1, 4]
 ret = util.add_position_iter(a)
