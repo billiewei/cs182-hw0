@@ -128,20 +128,15 @@ def add_position_map(lst, number_from=0):
 ## Problem 5
 
 def remove_course(roster, student, course):
-    print "This is the roster: "
-    print roster
-    print "We should remove " + student + " " + course
     if student in roster:
         if course in roster[student]:
-            print "removing now"
             roster[student].discard(course)
-            return roster
-    print "post deletion: "
     print roster
+    return roster
     
-
 ## Problem 6
 
 def copy_remove_course(roster, student, course):
-    pass
+    ourcopy = copy.deepcopy(roster)
+    return remove_course(ourcopy, student, course)
 
