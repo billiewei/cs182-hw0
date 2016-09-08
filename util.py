@@ -45,6 +45,7 @@ class MyQueue:
         del self.arr[0]
         return return_value
     def __eq__(self, other):
+        isinstance(other, MyQueue)
         if len(self.arr) != len(other):
             return False
         else:
@@ -53,6 +54,7 @@ class MyQueue:
                     return False
             return True
     def __ne__(self, other):
+        isinstance(other, MyQueue)
         if len(self.arr) != len(other):
             return True
         else:
@@ -80,6 +82,7 @@ class MyStack:
         del self.arr[len(self.arr)-1]
         return return_value
     def __eq__(self, other):
+        isinstance(other, MyStack)
         if len(self.arr) != len(other):
             return False
         else:
@@ -88,6 +91,7 @@ class MyStack:
                     return False
             return True
     def __ne__(self, other):
+        isinstance(other, MyStack)
         if len(self.arr) != len(other):
             return True
         else:
@@ -124,7 +128,17 @@ def add_position_map(lst, number_from=0):
 ## Problem 5
 
 def remove_course(roster, student, course):
-    pass
+    print "This is the roster: "
+    print roster
+    print "We should remove " + student + " " + course
+    if student in roster:
+        if course in roster[student]:
+            print "removing now"
+            roster[student].discard(course)
+            return roster
+    print "post deletion: "
+    print roster
+    
 
 ## Problem 6
 
