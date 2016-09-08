@@ -63,7 +63,7 @@ class MyQueue:
                     return True
             return False
     def __str__(self):
-       print "PRINTING SELF!"
+       #print "PRINTING SELF!"
        a = map(str, self.arr)
        print ', '.join(a)
        return ', '.join(a)
@@ -74,7 +74,7 @@ class MyStack:
         self
     def push(self, val):
         self.arr.append(val)
-        print self.arr
+        #print self.arr
     def pop(self):
         if len(self.arr) < 1:
             return None
@@ -131,7 +131,7 @@ def remove_course(roster, student, course):
     if student in roster:
         if course in roster[student]:
             roster[student].discard(course)
-    print roster
+    #print roster
     return roster
     
 ## Problem 6
