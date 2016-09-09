@@ -131,7 +131,11 @@ def remove_course(roster, student, course):
     if student in roster:
         if course in roster[student]:
             roster[student].discard(course)
-    #print roster
+        else:
+            print "Student is currently not taking this course!"
+    else:
+        print "Student not in roster!"
+    print roster
     return roster
     
 ## Problem 6

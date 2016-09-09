@@ -86,7 +86,7 @@ assert(ret == [3, 4, 8, 7])
 # An example behavior is as follows:
 # 
 
-roster = {'kyu': set(['cs182']), 'david': set(['cs182'])}
+roster = {'kyu': set(['cs182', 'cs182']), 'david': set(['cs182'])}
 util.remove_course(roster, 'kyu', 'cs182')
 assert(roster == {'kyu': set([]), 'david': set(['cs182'])})
 
@@ -94,7 +94,7 @@ assert(roster == {'kyu': set([]), 'david': set(['cs182'])})
 # ### Problem 6
 # Now write a function called `copy_remove_course`. The specifications are the same as above except the function should now be non-destructive. An example behavior is as follows:
 
-roster = {'kyu': set(['cs182']), 'david': set(['cs182'])}
+roster = {'kyu': set(['cs182', 'cs182']), 'david': set(['cs182'])}
 new_roster = util.copy_remove_course(roster, 'kyu', 'cs182')
 assert(roster == {'kyu': set(['cs182']), 'david': set(['cs182'])})
 assert(new_roster == {'kyu': set([]), 'david': set(['cs182'])})
